@@ -13,13 +13,15 @@
                     <i class="fas fa-home"></i>
                     Blog Home
                 </a></li>
-                <li class="tm-nav-item"><a href="post.html" class="tm-nav-link">
-                    <i class="fas fa-pen"></i>
-                    Single Post
-                </a></li>
-                <li class="tm-nav-item"><a href="about.html" class="tm-nav-link">
+                
+                <li class="tm-nav-item"><a href="register.php" class="tm-nav-link">
                     <i class="fas fa-users"></i>
-                    About Xtra
+                    Register
+                </a></li>
+
+                <li class="tm-nav-item"><a href="login.php" class="tm-nav-link">
+                    <i class="fas fa-pen"></i>
+                    Login
                 </a></li>
                 <li class="tm-nav-item"><a href="contact.html" class="tm-nav-link">
                     <i class="far fa-comments"></i>
