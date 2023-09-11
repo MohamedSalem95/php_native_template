@@ -14,19 +14,30 @@
                     Blog Home
                 </a></li>
                 
-                <li class="tm-nav-item"><a href="register.php" class="tm-nav-link">
-                    <i class="fas fa-users"></i>
-                    Register
-                </a></li>
+               <?php
+                session_start();
+                if (!isset($_SESSION['id'])) {
+                    ?>
+                         <li class="tm-nav-item"><a href="register.php" class="tm-nav-link">
+                            <i class="fas fa-users"></i>
+                            Register
+                        </a></li>
 
-                <li class="tm-nav-item"><a href="login.php" class="tm-nav-link">
-                    <i class="fas fa-pen"></i>
-                    Login
-                </a></li>
-                <li class="tm-nav-item"><a href="contact.html" class="tm-nav-link">
+                        <li class="tm-nav-item"><a href="login.php" class="tm-nav-link">
+                            <i class="fas fa-pen"></i>
+                            Login
+                        </a></li>
+                    <?php
+                }
+               
+               ?>
+               <?php if (isset($_SESSION['id'])) { ?>
+               <li class="tm-nav-item"><a href="logout.php" class="tm-nav-link">
                     <i class="far fa-comments"></i>
-                    Contact Us
+                    Logout
                 </a></li>
+                <?php } ?>
+                
             </ul>
         </nav>
         <div class="tm-mb-65">

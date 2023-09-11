@@ -29,6 +29,8 @@ https://templatemo.com/tm-553-xtra-blog
                 </div>
             </div>
             <?php
+            
+
             $email = $password = '';
             $email_err = $password_err = '';
             $form_valid = true;
@@ -50,9 +52,9 @@ https://templatemo.com/tm-553-xtra-blog
 
                 if ($form_valid) {
                     // register user here
-                    require('connect_db.php');
-                    require('login.php');
-                    $query = "SELECT * FROM users WHERE email = '$email'";
+                    include('connect_db.php');
+                    include('login_user.php');
+                    $query = "SELECT * FROM users WHERE email = '$email' limit 1";
                     $result = mysqli_query($conn, $query);
                     if (mysqli_num_rows($result) > 0) {
                         $user = mysqli_fetch_assoc($result);
