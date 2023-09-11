@@ -72,6 +72,7 @@ https://templatemo.com/tm-553-xtra-blog
                     $password_hash = password_hash($password, PASSWORD_BCRYPT);
                     $query = "INSERT INTO users (name, email, password) VALUES ('$name', '$email', '$password_hash')";
                     mysqli_query($conn, $query);
+                    // echo $password_hash;
                     header('Location: http://127.0.0.1/extra_blog/login.php');
                     
                 }

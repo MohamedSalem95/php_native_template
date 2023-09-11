@@ -51,13 +51,14 @@ https://templatemo.com/tm-553-xtra-blog
                 if ($form_valid) {
                     // register user here
                     require('connect_db.php');
-                    $query = "SELECT * FROM users WHERE email = '$email' limit 1";
+                    require('login.php');
+                    $query = "SELECT * FROM users WHERE email = '$email'";
                     $result = mysqli_query($conn, $query);
                     if (mysqli_num_rows($result) > 0) {
                         $user = mysqli_fetch_assoc($result);
                         if (password_verify($password, $user['password'])){
-                            require('login.php');
-                            login_user($user['name'], $user['id']);
+                            
+                            user_login($user['name'], $user['id']);
                             header('Location: http://127.0.0.1/extra_blog');
                         } else {
                             header('Location: http://127.0.0.1/extra_blog/login.php?msg="Invalid username or password"');
@@ -72,6 +73,11 @@ https://templatemo.com/tm-553-xtra-blog
             ?>
             <div class="form">
                 <h4> Login </h4>
+                <?php
+                    if (isset($_GET['msg'])) {
+                        echo "<p style='color: red;'>" . $_GET['msg'] . "</p>";
+                    }
+                ?>
                 <form action="<?= htmlspecialchars($_SERVER['PHP_SELF']) ?>" method="post">
                     
 
