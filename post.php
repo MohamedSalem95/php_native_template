@@ -96,7 +96,14 @@ https://templatemo.com/tm-553-xtra-blog
                 <div>
                     <p>
                         <?= $comment['body'] ?>
-                    </p>                                               
+                    </p>                         
+                    
+                    <form method="POST">
+                        <label for="reply">Reply:</label>
+                        <textarea name="body" id="reply" cols="30" rows="3" class="form-control" placeholder="reply here .."></textarea>
+                        <br >
+                        <input type="submit" value="Save" class="tm-btn tm-btn-primary tm-btn-small">
+                    </from>
                 </div>                                
             </div>
             
