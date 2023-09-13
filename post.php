@@ -86,7 +86,7 @@ https://templatemo.com/tm-553-xtra-blog
     if (mysqli_num_rows($result) > 0) {
     
         while($comment = mysqli_fetch_assoc($result)) {
-            echo "
+            ?>
             <div class='tm-comment tm-mb-45'>
                 <figure class='tm-comment-figure'>
                     <img src='img/comment-1.jpg' alt='Image' class='mb-2 rounded-circle img-thumbnail'>
@@ -95,11 +95,13 @@ https://templatemo.com/tm-553-xtra-blog
             
                 <div>
                     <p>
-                        {$comment['body']}
+                        <?= $comment['body'] ?>
                     </p>                                               
                 </div>                                
             </div>
-            ";
+            
+
+        <?php
         }
     } else {
         echo '<p> No comments here yet consider adding one! </p>';
@@ -123,7 +125,7 @@ https://templatemo.com/tm-553-xtra-blog
             $query = "INSERT INTO comments (body, post_id)  VALUES( '{$comment}' , {$id})";
             mysqli_query($conn, $query);
             mysqli_close($conn);
-            // header("Location: http://127.0.0.1/extra_blog?id={$id}");
+            // header("Location: post.php?id={$id}", true);
         }
     }
 
