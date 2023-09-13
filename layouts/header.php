@@ -32,6 +32,12 @@
                
                ?>
                <?php if (isset($_SESSION['id'])) { ?>
+
+                <li class="tm-nav-item"><a href="<?= 'profile.php?id=' . $_SESSION['id'] ?>" class="tm-nav-link">
+                    <i class="far fa-comments"></i>
+                    Profile
+                </a></li>
+
                <li class="tm-nav-item"><a href="logout.php" class="tm-nav-link">
                     <i class="far fa-comments"></i>
                     Logout
